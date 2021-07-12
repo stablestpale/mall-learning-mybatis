@@ -1,5 +1,6 @@
 package mall_mybatis.demo.controller;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +26,7 @@ import static mall_mybatis.demo.utils.ConstUtil.*;
  */
 
 
+@Api(tags = "PmsBrandController")
 @Controller
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RequestMapping(PMS_BRAND)
