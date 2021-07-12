@@ -13,6 +13,7 @@ public class ConstUtil {
 
     //swagger-ui tags
     public static final String PMS_BRAND_CONTROLLER = "PmsBrandController";
+    public static final String UMS_MEMBER_CONTROLLER = "UmsMemberController";
 
     //controller
     public static final String ID = "id";
@@ -24,4 +25,8 @@ public class ConstUtil {
     public static final String PMS_BRAND_DELETE_BRAND = "deleteBrand";
     public static final String PMS_BRAND_LIST_BRAND = "listBrand";
     public static final String PMS_BRAND_GET_BRAND_DETAIL = "getBrandDetail";
+    //ums-member-controller
+    public static final String UMS_MEMBER = "/sso";
+    public static final String UMS_MEMBER_GET_AUTH_CODE = "getAuthCode";
+    public static final String UMS_MEMBER_VERIFY_AUTH_CODE = "verifyAuthCode";
 }

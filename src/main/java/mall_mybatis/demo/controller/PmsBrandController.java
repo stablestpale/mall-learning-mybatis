@@ -26,7 +26,7 @@ import static mall_mybatis.demo.utils.ConstUtil.*;
  */
 
 
-@Api(tags = "PmsBrandController")
+@Api(tags = PMS_BRAND_CONTROLLER)
 @Controller
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RequestMapping(PMS_BRAND)

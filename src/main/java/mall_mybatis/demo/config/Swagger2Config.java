@@ -11,6 +11,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import static mall_mybatis.demo.utils.ConstUtil.PMS_BRAND_CONTROLLER;
+import static mall_mybatis.demo.utils.ConstUtil.UMS_MEMBER_CONTROLLER;
 
 /**
  * @author zzy
@@ -29,6 +30,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .tags(new Tag(PMS_BRAND_CONTROLLER, "商品品牌管理"))
+                .tags(new Tag(UMS_MEMBER_CONTROLLER, "会员登录注册管理"))
                 .select()
                 //为当前包下controller生成API文档
                 .apis(RequestHandlerSelectors.basePackage("com.test.mall.demo.controller"))
