@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author zzy
- * @description: TODO
+ * @description: MyBatisConfig
  * @date 2021/7/12 10:35
  */
 
