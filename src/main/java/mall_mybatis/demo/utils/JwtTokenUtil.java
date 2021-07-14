@@ -6,6 +6,7 @@ import io.jsonwebtoken.Jwts;
 import jdk.nashorn.internal.parser.TokenKind;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -25,8 +26,10 @@ public class JwtTokenUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtTokenUtil.class);
     private static final String CLAIM_KEY_USERNAME = "sub";
     private static final String CLAIM_KEY_CREATED = "created";
-    private static final String SECRET = "glgjssy";
-    private Long expiration = 24*60*60L;
+    @Value("${jwt.secret}")
+    private String secret;
+    @Value("${jwt.expiration}")
+    private Long expiration;
 
     /*
      * @description: 生成token
@@ -72,7 +75,7 @@ public class JwtTokenUtil {
      * @date: 10:47 2021/7/13
      */
     private Date generateExpirationDate(){
-        return new Date(System.currentTimeMillis() + expiration * 1000);
+        return new Date(System.currentTimeMillis() + expiration.longValue() * 1000);
     }
 
     /*
@@ -85,7 +88,7 @@ public class JwtTokenUtil {
         Claims claims = null;
         try{
             claims = Jwts.parser()
-                    .setSigningKey(SECRET)
+                    .setSigningKey(secret)
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e){
@@ -100,7 +103,7 @@ public class JwtTokenUtil {
      * @return: Boolean
      * @date: 10:57 2021/7/13
      */
-    private Boolean validateToken(String token, UserDetails userDetails){
+    public Boolean validateToken(String token, UserDetails userDetails){
         String username = getUserNameFromToken(token);
         return username.equals(userDetails.getUsername()) && !validateExpiration(token);
     }
@@ -122,7 +125,7 @@ public class JwtTokenUtil {
      * @return: String
      * @date: 10:56 2021/7/13
      */
-    private String getUserNameFromToken(String token){
+    public String getUserNameFromToken(String token){
         String username;
         try {
             Claims claims = getClaimsFromToken(token);

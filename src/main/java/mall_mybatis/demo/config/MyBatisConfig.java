@@ -12,6 +12,6 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-@MapperScan({"mall_mybatis.demo.mbg.mapper", "mall_mybatis.demo.mbg.dao"})
+@MapperScan({"mall_mybatis.demo.mbg.mapper", "mall_mybatis.demo.dao"})
 public class MyBatisConfig {
 }
