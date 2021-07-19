@@ -14,6 +14,7 @@ public class ConstUtil {
     //swagger-ui tags
     public static final String PMS_BRAND_CONTROLLER = "PmsBrandController";
     public static final String UMS_MEMBER_CONTROLLER = "UmsMemberController";
+    public static final String UMS_ADMIN_CONTROLLER = "UmsAdminController";
 
     //controller
     public static final String ID = "id";
@@ -29,4 +30,9 @@ public class ConstUtil {
     public static final String UMS_MEMBER = "/sso";
     public static final String UMS_MEMBER_GET_AUTH_CODE = "getAuthCode";
     public static final String UMS_MEMBER_VERIFY_AUTH_CODE = "verifyAuthCode";
+    //ums-admin-controller
+    public static final String UMS_ADMIN = "/admin";
+    public static final String UMS_ADMIN_REGISTER = "register";
+    public static final String UMS_ADMIN_LOGIN = "login";
+    public static final String UMS_ADMIN_PERMISSION = "/permission/{adminId}";
 }

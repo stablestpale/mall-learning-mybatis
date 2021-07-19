@@ -3,7 +3,9 @@ package mall_mybatis.demo.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.Tag;
 import lombok.RequiredArgsConstructor;
+import mall_mybatis.demo.config.Swagger2Config;
 import mall_mybatis.demo.mbg.api.BasePageResult;
 import mall_mybatis.demo.mbg.api.BaseResult;
 import mall_mybatis.demo.mbg.model.PmsBrand;
@@ -25,8 +27,7 @@ import static mall_mybatis.demo.utils.ConstUtil.*;
  * @date 2021/7/12 15:16
  */
 
-
-@Api(tags = PMS_BRAND_CONTROLLER)
+@Api(tags = {PMS_BRAND_CONTROLLER})
 @Controller
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RequestMapping(PMS_BRAND)
